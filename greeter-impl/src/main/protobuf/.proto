@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.protegotrust.grpc.interop";
+option java_outer_classname = "GreetingProto";
+
+package greeter;
+
+service GreetingService {
+  rpc GreetStranger (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string from = 1;
+}
+
+message HelloReply {
+  string answer = 1;
+}
